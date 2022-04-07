@@ -1,5 +1,4 @@
 #board {
-    background-color: rgb(163, 218, 255);
-    outline: 1px solid rgb(56, 175, 255);
-
+    background-color: rgb(161, 208, 202);
+    height: 100vh;  
 }

@@ -2,3 +2,9 @@
     background-color: rgb(161, 208, 202);
     height: 100vh;  
 }
+
+.player{
+    background-color: black;
+    height: 20px; /* change*/
+    width: 120px;
+}

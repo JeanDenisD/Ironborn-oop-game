@@ -1,21 +1,27 @@
 
 
-
 function createDomElement(className){
     const board = document.getElementById("board");
     const newElm = document.createElement("div");
     newElm.className = className;
 
     board.appendChild(newElm);
+
+    return newElm;
 }
 
 
-const game = new Game(createDomElement);
+function drawDomElement(instance){    
+    instance.domElement.style.left = instance.positionX + "%";
+    instance.domElement.style.bottom = instance.positionY + "%";
+}
+
+
+const game = new Game(createDomElement, drawDomElement);
 game.start();
 
 
 document.addEventListener("keydown", function(event){
-    console.log(event)
     switch(event.key){
         case "ArrowRight":
             game.movePlayer("right");
@@ -25,3 +31,4 @@ document.addEventListener("keydown", function(event){
             break;
     }
 });
+

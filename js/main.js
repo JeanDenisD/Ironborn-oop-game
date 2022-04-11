@@ -11,7 +11,9 @@ function createDomElement(className){
 }
 
 
-function drawDomElement(instance){    
+function drawDomElement(instance){
+    instance.domElement.style.width = instance.width + "%";
+    instance.domElement.style.height = instance.height + "%";
     instance.domElement.style.left = instance.positionX + "%";
     instance.domElement.style.bottom = instance.positionY + "%";
 }
@@ -29,6 +31,18 @@ document.addEventListener("keydown", function(event){
         case "ArrowLeft":
             game.movePlayer("left");
             break;
+        case "s":
+            if ( game.run === false){
+                game.run = true
+                game.runGame();
+            } else if ( game.run === true){
+                game.run = false;
+                game.pauseGame();
+            }
+        case " ":
+            game.weaponShoot()
+            //}
     }
 });
+
 
